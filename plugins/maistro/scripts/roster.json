@@ -1,0 +1,440 @@
+[
+ {
+  "id": "D00",
+  "type": "maistro:d00-director",
+  "division": "director",
+  "title": "Research Director"
+ },
+ {
+  "id": "M01",
+  "type": "maistro:methodology:m01-problem-framer",
+  "division": "methodology",
+  "title": "Problem Framer"
+ },
+ {
+  "id": "M02",
+  "type": "maistro:methodology:m02-gap-analyst",
+  "division": "methodology",
+  "title": "Literature-Gap Analyst"
+ },
+ {
+  "id": "M03",
+  "type": "maistro:methodology:m03-hypothesis-formalizer",
+  "division": "methodology",
+  "title": "Hypothesis Formaliser"
+ },
+ {
+  "id": "M04",
+  "type": "maistro:methodology:m04-design-architect",
+  "division": "methodology",
+  "title": "Research-Design Architect"
+ },
+ {
+  "id": "M05",
+  "type": "maistro:methodology:m05-measurement-specialist",
+  "division": "methodology",
+  "title": "Variables & Measurement Specialist"
+ },
+ {
+  "id": "M06",
+  "type": "maistro:methodology:m06-sampling-strategist",
+  "division": "methodology",
+  "title": "Sampling & Data Strategist"
+ },
+ {
+  "id": "M07",
+  "type": "maistro:methodology:m07-feasibility-planner",
+  "division": "methodology",
+  "title": "Resources & Feasibility Planner"
+ },
+ {
+  "id": "M08",
+  "type": "maistro:methodology:m08-ethics-officer",
+  "division": "methodology",
+  "title": "Ethics & Integrity Officer"
+ },
+ {
+  "id": "M09",
+  "type": "maistro:methodology:m09-preregistration-writer",
+  "division": "methodology",
+  "title": "Pre-registration Writer"
+ },
+ {
+  "id": "M10",
+  "type": "maistro:methodology:m10-risk-planner",
+  "division": "methodology",
+  "title": "Risk & Contingency Planner"
+ },
+ {
+  "id": "M11",
+  "type": "maistro:methodology:m11-methods-bridge",
+  "division": "methodology",
+  "title": "Interdisciplinary Methods Bridge"
+ },
+ {
+  "id": "S01",
+  "type": "maistro:sources:s01-source-scout",
+  "division": "sources",
+  "title": "Source Scout"
+ },
+ {
+  "id": "S02",
+  "type": "maistro:sources:s02-bibliographic-gatekeeper",
+  "division": "sources",
+  "title": "Bibliographic Gatekeeper"
+ },
+ {
+  "id": "S03",
+  "type": "maistro:sources:s03-author-investigator",
+  "division": "sources",
+  "title": "Author Background Investigator"
+ },
+ {
+  "id": "S04",
+  "type": "maistro:sources:s04-venue-auditor",
+  "division": "sources",
+  "title": "Venue & Publisher Auditor"
+ },
+ {
+  "id": "S05",
+  "type": "maistro:sources:s05-retraction-sentinel",
+  "division": "sources",
+  "title": "Retraction & Correction Sentinel"
+ },
+ {
+  "id": "S06",
+  "type": "maistro:sources:s06-coi-funding-analyst",
+  "division": "sources",
+  "title": "Conflict-of-Interest & Funding Analyst"
+ },
+ {
+  "id": "S07",
+  "type": "maistro:sources:s07-bias-marketing-detector",
+  "division": "sources",
+  "title": "Bias, Spin & Marketing Detector"
+ },
+ {
+  "id": "S08",
+  "type": "maistro:sources:s08-quality-appraiser",
+  "division": "sources",
+  "title": "Methodological-Quality Appraiser"
+ },
+ {
+  "id": "S09",
+  "type": "maistro:sources:s09-citation-tracer",
+  "division": "sources",
+  "title": "Citation-Chain Tracer"
+ },
+ {
+  "id": "S10",
+  "type": "maistro:sources:s10-replication-checker",
+  "division": "sources",
+  "title": "Replication & Consensus Checker"
+ },
+ {
+  "id": "S11",
+  "type": "maistro:sources:s11-statistical-forensics",
+  "division": "sources",
+  "title": "Statistical Forensics Analyst"
+ },
+ {
+  "id": "T01",
+  "type": "maistro:theory:t01-frameworks-cartographer",
+  "division": "theory",
+  "title": "Theoretical Frameworks Cartographer"
+ },
+ {
+  "id": "T02",
+  "type": "maistro:theory:t02-evidence-synthesizer",
+  "division": "theory",
+  "title": "Evidence Synthesiser"
+ },
+ {
+  "id": "T03",
+  "type": "maistro:theory:t03-argument-mapper",
+  "division": "theory",
+  "title": "Argument Mapper"
+ },
+ {
+  "id": "T04",
+  "type": "maistro:theory:t04-contradiction-resolver",
+  "division": "theory",
+  "title": "Contradiction Resolver"
+ },
+ {
+  "id": "T05",
+  "type": "maistro:theory:t05-causal-analyst",
+  "division": "theory",
+  "title": "Causal-Mechanism Analyst"
+ },
+ {
+  "id": "T06",
+  "type": "maistro:theory:t06-history-contextualist",
+  "division": "theory",
+  "title": "History & Paradigm Contextualist"
+ },
+ {
+  "id": "T07",
+  "type": "maistro:theory:t07-cross-disciplinary-integrator",
+  "division": "theory",
+  "title": "Cross-Disciplinary Integrator"
+ },
+ {
+  "id": "T08",
+  "type": "maistro:theory:t08-formal-modeler",
+  "division": "theory",
+  "title": "Formal Modeller"
+ },
+ {
+  "id": "T09",
+  "type": "maistro:theory:t09-credence-keeper",
+  "division": "theory",
+  "title": "Bayesian Credence Keeper"
+ },
+ {
+  "id": "T10",
+  "type": "maistro:theory:t10-steelman-advocate",
+  "division": "theory",
+  "title": "Steelman Advocate"
+ },
+ {
+  "id": "T11",
+  "type": "maistro:theory:t11-debate-chair",
+  "division": "theory",
+  "title": "Debate Chair"
+ },
+ {
+  "id": "E01",
+  "type": "maistro:experiments:e01-experiment-designer",
+  "division": "experiments",
+  "title": "Experiment Designer"
+ },
+ {
+  "id": "E02",
+  "type": "maistro:experiments:e02-analysis-planner",
+  "division": "experiments",
+  "title": "Statistical-Analysis Planner"
+ },
+ {
+  "id": "E03",
+  "type": "maistro:experiments:e03-power-simulation-engineer",
+  "division": "experiments",
+  "title": "Power & Simulation Engineer"
+ },
+ {
+  "id": "E04",
+  "type": "maistro:experiments:e04-computational-builder",
+  "division": "experiments",
+  "title": "Computational-Experiment Builder"
+ },
+ {
+  "id": "E05",
+  "type": "maistro:experiments:e05-data-acquisition-engineer",
+  "division": "experiments",
+  "title": "Data-Acquisition Engineer"
+ },
+ {
+  "id": "E06",
+  "type": "maistro:experiments:e06-measurement-validity-tester",
+  "division": "experiments",
+  "title": "Measurement-Validity Tester"
+ },
+ {
+  "id": "E07",
+  "type": "maistro:experiments:e07-robustness-engineer",
+  "division": "experiments",
+  "title": "Robustness & Multiverse Engineer"
+ },
+ {
+  "id": "E08",
+  "type": "maistro:experiments:e08-falsification-designer",
+  "division": "experiments",
+  "title": "Falsification & Negative-Control Designer"
+ },
+ {
+  "id": "E09",
+  "type": "maistro:experiments:e09-reproducibility-engineer",
+  "division": "experiments",
+  "title": "Reproducibility Engineer"
+ },
+ {
+  "id": "E10",
+  "type": "maistro:experiments:e10-baselines-designer",
+  "division": "experiments",
+  "title": "Baselines & Null-Model Designer"
+ },
+ {
+  "id": "E11",
+  "type": "maistro:experiments:e11-results-auditor",
+  "division": "experiments",
+  "title": "Results Auditor"
+ },
+ {
+  "id": "C01",
+  "type": "maistro:critique:c01-methodology-reviewer",
+  "division": "critique",
+  "title": "Methodology Reviewer"
+ },
+ {
+  "id": "C02",
+  "type": "maistro:critique:c02-statistical-reviewer",
+  "division": "critique",
+  "title": "Statistical Reviewer"
+ },
+ {
+  "id": "C03",
+  "type": "maistro:critique:c03-logic-auditor",
+  "division": "critique",
+  "title": "Logic & Fallacy Auditor"
+ },
+ {
+  "id": "C04",
+  "type": "maistro:critique:c04-source-skeptic",
+  "division": "critique",
+  "title": "Source Sceptic"
+ },
+ {
+  "id": "C05",
+  "type": "maistro:critique:c05-devils-advocate",
+  "division": "critique",
+  "title": "Devil's Advocate"
+ },
+ {
+  "id": "C06",
+  "type": "maistro:critique:c06-reviewer-two",
+  "division": "critique",
+  "title": "Reviewer 2"
+ },
+ {
+  "id": "C07",
+  "type": "maistro:critique:c07-construct-validity-critic",
+  "division": "critique",
+  "title": "Construct-Validity Critic"
+ },
+ {
+  "id": "C08",
+  "type": "maistro:critique:c08-external-validity-critic",
+  "division": "critique",
+  "title": "External-Validity Critic"
+ },
+ {
+  "id": "C09",
+  "type": "maistro:critique:c09-ethics-reviewer",
+  "division": "critique",
+  "title": "Ethics Reviewer"
+ },
+ {
+  "id": "C10",
+  "type": "maistro:critique:c10-reproducibility-reviewer",
+  "division": "critique",
+  "title": "Clarity & Reproducibility Reviewer"
+ },
+ {
+  "id": "C11",
+  "type": "maistro:critique:c11-overclaiming-detector",
+  "division": "critique",
+  "title": "Overclaiming Detector"
+ },
+ {
+  "id": "C12",
+  "type": "maistro:critique:c12-lab-bias-auditor",
+  "division": "critique",
+  "title": "Lab-Bias Auditor"
+ },
+ {
+  "id": "F01",
+  "type": "maistro:frontier:f01-wild-hypothesis-generator",
+  "division": "frontier",
+  "title": "Wild-Hypothesis Generator"
+ },
+ {
+  "id": "F02",
+  "type": "maistro:frontier:f02-analogy-miner",
+  "division": "frontier",
+  "title": "Far-Field Analogy Miner"
+ },
+ {
+  "id": "F03",
+  "type": "maistro:frontier:f03-inversion-thinker",
+  "division": "frontier",
+  "title": "Inversion Thinker"
+ },
+ {
+  "id": "F04",
+  "type": "maistro:frontier:f04-assumption-breaker",
+  "division": "frontier",
+  "title": "Assumption Breaker"
+ },
+ {
+  "id": "F05",
+  "type": "maistro:frontier:f05-futurist",
+  "division": "frontier",
+  "title": "Futurist"
+ },
+ {
+  "id": "F06",
+  "type": "maistro:frontier:f06-constraint-remover",
+  "division": "frontier",
+  "title": "Constraint Remover"
+ },
+ {
+  "id": "F07",
+  "type": "maistro:frontier:f07-combinatorial-synthesizer",
+  "division": "frontier",
+  "title": "Combinatorial Synthesiser"
+ },
+ {
+  "id": "F08",
+  "type": "maistro:frontier:f08-anomaly-hunter",
+  "division": "frontier",
+  "title": "Anomaly Hunter"
+ },
+ {
+  "id": "F09",
+  "type": "maistro:frontier:f09-paradigm-rebel",
+  "division": "frontier",
+  "title": "Paradigm Rebel"
+ },
+ {
+  "id": "F10",
+  "type": "maistro:frontier:f10-naive-questioner",
+  "division": "frontier",
+  "title": "Naive Questioner"
+ },
+ {
+  "id": "F11",
+  "type": "maistro:frontier:f11-serendipity-engine",
+  "division": "frontier",
+  "title": "Random-Stimulus & Serendipity Engine"
+ },
+ {
+  "id": "W01",
+  "type": "maistro:editorial:w01-manuscript-lead",
+  "division": "editorial",
+  "title": "Manuscript Lead"
+ },
+ {
+  "id": "W02",
+  "type": "maistro:editorial:w02-figures-designer",
+  "division": "editorial",
+  "title": "Figures & Data-Presentation Designer"
+ },
+ {
+  "id": "W03",
+  "type": "maistro:editorial:w03-references-reproducibility",
+  "division": "editorial",
+  "title": "References & Reproducibility Editor"
+ },
+ {
+  "id": "W04",
+  "type": "maistro:editorial:w04-arabic-translator",
+  "division": "editorial",
+  "title": "Arabic Scientific Translator"
+ },
+ {
+  "id": "W05",
+  "type": "maistro:editorial:w05-terminology-reviewer",
+  "division": "editorial",
+  "title": "Bilingual Terminology Reviewer"
+ }
+]

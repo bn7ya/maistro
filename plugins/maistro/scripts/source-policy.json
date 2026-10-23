@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "min_match_score": 0.9,
+  "identifier_types": ["doi", "arxiv", "pmid", "pmcid", "isbn", "handle", "publisher_url"],
+  "allowed_types": [
+    "journal-article",
+    "review-article",
+    "meta-analysis",
+    "conference-paper",
+    "preprint",
+    "book",
+    "book-chapter",
+    "thesis",
+    "dataset",
+    "report",
+    "official-statistics",
+    "standard",
+    "government-report",
+    "intergovernmental-report",
+    "legal-document",
+    "news-investigative"
+  ],
+  "org_author_allowed_types": [
+    "official-statistics",
+    "standard",
+    "government-report",
+    "intergovernmental-report",
+    "legal-document"
+  ],
+  "blocked_types": [
+    "marketing",
+    "press-release",
+    "vendor-whitepaper",
+    "sponsored",
+    "advertorial",
+    "product-page",
+    "seo-content",
+    "content-farm",
+    "ai-content-farm",
+    "unsigned-wiki",
+    "social-post",
+    "anonymous"
+  ],
+  "design_tier_grade": {
+    "1": "A",
+    "2": "A",
+    "3": "B",
+    "4": "C",
+    "5": "C",
+    "na": "B"
+  },
+  "type_grade_cap": {
+    "preprint": "B",
+    "thesis": "C",
+    "report": "C",
+    "dataset": "B",
+    "news-investigative": "D"
+  },
+  "default_grade": "C"
+}
