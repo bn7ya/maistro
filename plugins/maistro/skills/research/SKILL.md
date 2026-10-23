@@ -27,7 +27,7 @@ and rerun from the start by `next`.
    arguments are the idea. If there is no idea, ask for one and stop.
 2. Confirm the cost before anything else, because it is large. Tell the user the scale, about how
    many agent calls it makes (pilot about 200, standard about 400, full about 650), and the rough
-   cost at API list prices (pilot about $400–500, full about $1,500; on a subscription these runs
+   cost at API list prices (pilot about 400–500 US dollars, full about 1,500 US dollars; on a subscription these runs
    count toward usage limits). Suggest `--scale pilot` for a first run. Wait for a clear yes.
 3. Pick a slug: 2–5 English words for the idea in lowercase kebab case, `[a-z0-9-]`, at most 48
    characters. Translate an Arabic idea for the slug only. If `research/<slug>/` exists, add `-2`,
