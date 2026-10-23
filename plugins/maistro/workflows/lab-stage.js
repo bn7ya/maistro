@@ -180,12 +180,13 @@ async function call(id, prompt, schema, label, ph, extra) {
 }
 
 // The director runs on Fable; if Fable is unavailable the same definition runs on Opus.
-async function director(prompt, schema, label, ph) {
-  const res = await call('D00', prompt, schema, label, ph)
+// Round digests pass { effort: 'high' }; the charter, stage gates and sign-off use the definition's xhigh.
+async function director(prompt, schema, label, ph, extra) {
+  const res = await call('D00', prompt, schema, label, ph, extra)
   if (res || L.used >= L.cap) return res
   L.notes.push(`director fallback to opus for ${label}`)
   log(`director returned nothing for ${label}; retrying on opus`)
-  return call('D00', prompt, schema, `${label} (opus)`, ph, { model: 'opus' })
+  return call('D00', prompt, schema, `${label} (opus)`, ph, Object.assign({}, extra || {}, { model: 'opus' }))
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -489,6 +490,7 @@ async function runRounds(cfg) {
       `Board:\n${boardText(openTasks(board))}`,
       `Previous digest:\n${digest || '(none)'}`,
       [
+        'Decide and delegate; don\'t do the specialists\' work yourself. Read full posts or files only where a decision depends on them. If a decision changes the charter, make only that small edit to 00-charter.md, and turn any substantial rewriting into a task for its owner.',
         'Do four things:',
         '1. Write the round digest: what is now established, open disagreements, and decisions you made. Cite agent IDs, files and registry IDs.',
         '2. Update the board with board_updates (add, assign, close, drop). Write the full board as Markdown to ' + `${PD}/board/${STAGE}.md.`,
@@ -496,7 +498,7 @@ async function runRounds(cfg) {
         `4. Set stage_complete=true only if the stage goal is met and nothing blocking remains.${cfg.exitHint ? ' ' + cfg.exitHint : ''}`,
       ].join('\n'),
       tail(`${cfg.tag} r${k} director`),
-    ), DIGEST, `${cfg.tag} r${k} director`, cfg.phase)
+    ), DIGEST, `${cfg.tag} r${k} director`, cfg.phase, { effort: 'high' })
     if (d) { digest = clip(d.digest, 3000); applyDirectorBoard(board, d.board_updates, k) }
     const blocking = last.flatMap(p => p.blocking_issues || [])
     const exitOk = blocking.length === 0 && !openHigh(board)

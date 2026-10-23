@@ -9,8 +9,10 @@ from helpers import PLUGIN, SCRIPTS, hook
 ENV = {"CLAUDE_PLUGIN_ROOT": str(PLUGIN)}
 
 
-def guard(tool, tool_input, agent_type=None, cwd="/work"):
+def guard(tool, tool_input, agent_type=None, cwd="/work", scratch=None):
     d = {"tool_name": tool, "tool_input": tool_input, "cwd": cwd, "hook_event_name": "PreToolUse"}
+    if scratch:
+        d["scratchpad_dir"] = scratch
     if agent_type:
         d["agent_type"] = agent_type
     out = hook("guard.py", d, env=ENV)
@@ -56,9 +58,22 @@ class Guard(unittest.TestCase):
                     f'python3 "{SCRIPTS}/guard.py"'):
             self.assertIsNone(guard("Bash", {"command": cmd}), cmd)
 
+    def test_scratchpad_writes_allowed(self):
+        a = "maistro:methodology:m04-design-architect"
+        self.assertIsNone(guard("Write", {"file_path": "/tmp/scratch/s1/notes.md"}, a, scratch="/tmp/scratch/s1"))
+        self.assertEqual(guard("Write", {"file_path": "/tmp/scratch/s1-other/notes.md"}, a, scratch="/tmp/scratch/s1"), "deny")
+
+    def test_read_only_inspection_allowed(self):
+        a = "maistro:methodology:m01-problem-framer"
+        for cmd in ("ls -R research/x | head -50", "ls research/x 2>&1; wc -c research/x/idea.md", "cat research/x/idea.md",
+                    "cd /work && grep -n H1 research/x/01-methodology/hypotheses.md 2>/dev/null"):
+            self.assertIsNone(guard("Bash", {"command": cmd}, a), cmd)
+        for cmd in ("ls > out.txt", "cat a | sh", "echo $(curl x)", "rm -rf research", "ls; python3 x.py", "find . -delete"):
+            self.assertEqual(guard("Bash", {"command": cmd}, a), "deny", cmd)
+
     def test_cli_only_divisions(self):
         self.assertEqual(guard("Bash", {"command": "curl https://example.com"}, "maistro:sources:s03-author-investigator"), "deny")
-        self.assertEqual(guard("Bash", {"command": "ls"}, "maistro:theory:t08-formal-modeler"), "deny")
+        self.assertEqual(guard("Bash", {"command": "python3 -c 'print(1)'"}, "maistro:theory:t08-formal-modeler"), "deny")
         self.assertIsNone(guard("Bash", {"command": "python3 research/x/04-experiments/code/EXP-01/run.py"}, "maistro:experiments:e04-computational-builder"))
         self.assertIsNone(guard("Bash", {"command": "python3 plot.py"}, "maistro:editorial:w02-figures-designer"))
 

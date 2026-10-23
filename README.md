@@ -86,6 +86,13 @@ Then, in the folder where your research should live:
 
 This shows you the permission rules an unattended run needs and writes them only after you confirm.
 For the experiments stage, which runs code the agents write, it recommends auto mode with `/sandbox`.
+It also sets `CLAUDE_CODE_WORKFLOW_MAX_CONCURRENT_AGENTS=16`. By default a workflow runs at most
+(CPUs − 2) agents at once, which is only 2 on a 4-core machine and makes a run many times slower. The
+agents mostly wait on the API, so 16 is safe on small machines too.
+
+Run Maistro in an interactive session. In headless `claude -p` mode, background workflows are
+stopped once the session has been idle for 10 minutes, unless you set
+`CLAUDE_CODE_PRINT_BG_WAIT_CEILING_MS=0`.
 
 ## Use
 
@@ -106,8 +113,13 @@ Watch the agents work in `/workflows`. Everything they say and decide is in `res
 | `standard` | 3 | 100 + citation chain | 3 | 400 |
 | `full` (default) | 4 | 200 + citation chain | 5 | 650 |
 
-**Cost:** every lab agent runs on Opus and the director on Fable. A `full` run is several hours and
-tens of millions of tokens. Start with `--scale pilot`.
+**Cost and time:** every lab agent runs on Opus and the director on Fable, and they write long,
+detailed work. In a live test, the opening of a pilot methodology stage cost $47 at API list prices:
+the charter, 14 agents in round 1 and the director's first digest. That is about $2 per Opus agent
+call and $5–6 per Fable call. It took about an hour with 16 agents running at once. From that, a
+`pilot` project comes to roughly $400–500 and most of a day, and a `full` project to roughly $1,500
+and more than a day. On a subscription plan, these runs count toward your usage limits. Start with
+`--scale pilot`.
 
 ## What's in this repository
 

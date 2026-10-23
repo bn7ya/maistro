@@ -6,7 +6,8 @@
   stopped by prompts for the lab's own tools.
 - Lab agents (agent_type "maistro:*") may write only inside research/<slug>/, never to generated
   ledgers or _fragments/. Frontier agents may write only to forum/ and 06-frontier/.
-- Methodology, sources and theory agents may use Bash only for the scholarly CLI.
+- Methodology, sources and theory agents may use Bash only for the scholarly CLI and read-only
+  inspection commands. Writes to the session's scratchpad are always allowed.
 Anything else gets no decision from this hook, so the normal permission rules apply.
 """
 import json
@@ -31,6 +32,8 @@ PROTECTED = {
 }
 PROTECTED_DIRS = ("_fragments/", "_runs/", "02-sources/dossiers/")
 CLI_ONLY_DIVISIONS = {"methodology", "sources", "theory", "frontier", "director"}
+READ_ONLY = {"ls", "cat", "head", "tail", "wc", "grep", "rg", "pwd", "stat", "file", "sort", "uniq", "cut", "tr",
+             "diff", "tree", "du", "basename", "dirname", "realpath", "echo", "jq", "column", "nl", "less"}
 
 
 def decide(decision, reason):
@@ -61,6 +64,26 @@ def is_own_script(cmd):
     return os.path.realpath(tokens[1]) in OWN_SCRIPTS
 
 
+def is_read_only(cmd):
+    """Plain inspection commands (ls, cat, wc, grep…), possibly piped together, with no redirects
+    other than to /dev/null and no command substitution."""
+    if "`" in cmd or "$(" in cmd or "\n" in cmd:
+        return False
+    cleaned = re.sub(r"\s[12]?>\s*/dev/null|\s2>&1", " ", cmd)
+    if re.search(r"[<>]", cleaned):
+        return False
+    for seg in re.split(r"\|\||&&|;|\|", cleaned):
+        seg = seg.strip()
+        if not seg:
+            continue
+        if seg.startswith("cd "):
+            continue
+        prog = seg.split()[0]
+        if os.path.basename(prog) not in READ_ONLY:
+            return False
+    return True
+
+
 def main():
     try:
         d = json.load(sys.stdin)
@@ -76,14 +99,17 @@ def main():
         cmd = str(ti.get("command") or "").strip()
         if is_own_script(cmd):
             decide("allow", "Maistro's own scholarly/state scripts")
-        if lab and division_of(agent) in CLI_ONLY_DIVISIONS:
-            decide("deny", "This lab division may use Bash only for the scholarly CLI: python3 \"<plugin>/scripts/maistro_scholar.py\" <command>")
+        if lab and division_of(agent) in CLI_ONLY_DIVISIONS and not is_read_only(cmd):
+            decide("deny", "This lab division may use Bash only for the scholarly CLI (python3 \"<plugin>/scripts/maistro_scholar.py\" <command>) and read-only inspection (ls, cat, grep, wc…). Use Read/Glob/Grep for files.")
         return
 
     if not lab or tool not in ("Write", "Edit", "NotebookEdit"):
         return
     path = ti.get("file_path") or ti.get("notebook_path") or ""
     target = os.path.normpath(os.path.join(cwd, path))
+    scratch = d.get("scratchpad_dir")
+    if scratch and (target + os.sep).startswith(os.path.normpath(scratch) + os.sep):
+        return
     research = os.path.join(os.path.normpath(cwd), "research") + os.sep
     if not target.startswith(research):
         decide("deny", "Lab agents write only inside research/<slug>/ of this project.")
