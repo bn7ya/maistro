@@ -1,0 +1,14 @@
+{
+  "name": "maistro",
+  "description": "Maistro: an autonomous, multi-agent research lab for Claude Code.",
+  "owner": { "name": "bn7ya" },
+  "plugins": [
+    {
+      "name": "maistro",
+      "source": "./plugins/maistro",
+      "description": "Turns a research idea into a full scientific project with 73 specialised agents and a Fable director.",
+      "category": "research",
+      "tags": ["research", "science", "multi-agent", "workflow", "bilingual"]
+    }
+  ]
+}

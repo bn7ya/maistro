@@ -1,0 +1,12 @@
+{
+ "https://api.crossref.org/works/10.1038%2Fnature12373": "crossref_work.json",
+ "https://api.crossref.org/works/10.1000%2Fstats.2020": "crossref_org.json",
+ "https://api.crossref.org/works?filter=updates:10.1000%2Fretracted.1&rows=20": "crossref_updates.json",
+ "https://api.crossref.org/works/10.1000%2Fretracted.1": "crossref_retracted.json",
+ "https://api.openalex.org/works/doi:10.1000%2Fretracted.1": "openalex_retracted.json",
+ "https://export.arxiv.org/api/query?id_list=1706.03762": "arxiv.xml",
+ "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=12345678&retmode=json": "pubmed.json",
+ "https://api.openalex.org/works?search=thermometry%20living%20cell&per-page=5": "openalex_search.json",
+ "https://api.crossref.org/works/10.9999%2Fdoes-not-exist": null,
+ "https://api.openalex.org/works/doi:10.9999%2Fdoes-not-exist": null
+}

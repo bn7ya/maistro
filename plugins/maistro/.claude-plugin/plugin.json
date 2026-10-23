@@ -1,0 +1,9 @@
+{
+  "name": "maistro",
+  "version": "0.1.0",
+  "description": "An autonomous R&D lab: 73 specialised agents (methodology, source integrity, theory, test engineering, critique, frontier ideas, editorial) and a Fable director take a research idea from charter to a bilingual (English/Arabic) paper.",
+  "author": { "name": "bn7ya" },
+  "repository": "https://github.com/bn7ya/maistro",
+  "license": "MIT",
+  "keywords": ["research", "science", "multi-agent", "workflow", "arabic"]
+}

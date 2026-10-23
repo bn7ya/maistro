@@ -1,0 +1,187 @@
+{
+  "version": 1,
+  "stages": [
+    "methodology",
+    "sources",
+    "theory",
+    "experiments",
+    "review",
+    "manuscript",
+    "arabic"
+  ],
+  "scales": {
+    "pilot": {
+      "rounds": 2,
+      "maxPerRound": 8,
+      "inboxExtra": 2,
+      "perAgentInbox": 4,
+      "src": {
+        "scouts": 3,
+        "perScout": 12,
+        "maxCandidates": 24,
+        "t1Batch": 20,
+        "t2Batch": 8,
+        "chainWave": false,
+        "chainMax": 0,
+        "revisit": {
+          "scouts": 2,
+          "perScout": 4
+        }
+      },
+      "ideasPer": 1,
+      "ideasMax": 11,
+      "voteBatch": 6,
+      "experiments": 2,
+      "reviewCycles": 1,
+      "maxOwners": 4,
+      "maxRereviewers": 6,
+      "sections": 6,
+      "maxClaims": 20,
+      "claimBatch": 10,
+      "revisions": 4,
+      "arFixes": 2,
+      "caps": {
+        "methodology": 30,
+        "sources": 45,
+        "theory": 50,
+        "experiments": 40,
+        "review": 30,
+        "manuscript": 30,
+        "arabic": 12
+      }
+    },
+    "standard": {
+      "rounds": 3,
+      "maxPerRound": 12,
+      "inboxExtra": 3,
+      "perAgentInbox": 4,
+      "src": {
+        "scouts": 6,
+        "perScout": 18,
+        "maxCandidates": 100,
+        "t1Batch": 20,
+        "t2Batch": 10,
+        "chainWave": true,
+        "chainMax": 30,
+        "revisit": {
+          "scouts": 3,
+          "perScout": 9
+        }
+      },
+      "ideasPer": 2,
+      "ideasMax": 22,
+      "voteBatch": 6,
+      "experiments": 3,
+      "reviewCycles": 2,
+      "maxOwners": 6,
+      "maxRereviewers": 12,
+      "sections": 8,
+      "maxClaims": 60,
+      "claimBatch": 10,
+      "revisions": 8,
+      "arFixes": 3,
+      "caps": {
+        "methodology": 60,
+        "sources": 120,
+        "theory": 90,
+        "experiments": 70,
+        "review": 55,
+        "manuscript": 50,
+        "arabic": 16
+      }
+    },
+    "full": {
+      "rounds": 4,
+      "maxPerRound": 16,
+      "inboxExtra": 4,
+      "perAgentInbox": 4,
+      "src": {
+        "scouts": 8,
+        "perScout": 25,
+        "maxCandidates": 200,
+        "t1Batch": 20,
+        "t2Batch": 10,
+        "chainWave": true,
+        "chainMax": 40,
+        "revisit": {
+          "scouts": 3,
+          "perScout": 13
+        }
+      },
+      "ideasPer": 3,
+      "ideasMax": 33,
+      "voteBatch": 6,
+      "experiments": 5,
+      "reviewCycles": 2,
+      "maxOwners": 8,
+      "maxRereviewers": 12,
+      "sections": 10,
+      "maxClaims": 120,
+      "claimBatch": 10,
+      "revisions": 10,
+      "arFixes": 4,
+      "caps": {
+        "methodology": 110,
+        "sources": 240,
+        "theory": 150,
+        "experiments": 110,
+        "review": 60,
+        "manuscript": 80,
+        "arabic": 20
+      }
+    }
+  },
+  "source_scouts": [
+    "S01",
+    "C05",
+    "S10",
+    "M05",
+    "T06",
+    "T07",
+    "E05",
+    "S09"
+  ],
+  "tier1": [
+    "S02",
+    "S05",
+    "S07"
+  ],
+  "tier2": [
+    "S03",
+    "S04",
+    "S06",
+    "S08",
+    "S09",
+    "S10"
+  ],
+  "tier2_empirical_extra": "S11",
+  "min_tier2_verdicts": 4,
+  "theory_voters": [
+    "T09",
+    "T05",
+    "T08",
+    "T07"
+  ],
+  "critic_voters": [
+    "C03",
+    "C11",
+    "C07"
+  ],
+  "ground_voters": [
+    "M03",
+    "S10",
+    "M04"
+  ],
+  "claim_lenses": [
+    "S09",
+    "C02",
+    "C06"
+  ],
+  "min_test_sketch": 80,
+  "min_downgrade_justification": 40,
+  "stage_leads": {
+    "methodology": "M04",
+    "theory": "T02",
+    "experiments": "E01"
+  }
+}
